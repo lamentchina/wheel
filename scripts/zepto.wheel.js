@@ -6,9 +6,9 @@
         colors: ['#7e1f20',"#FFFFFF", "#7e1f20", "#FFFFFF", "#7e1f20", "#FFFFFF", "#7e1f20", "#FFFFFF"],
         strokeColor: '#000',
         fontColor: '#000',
-        width: 360,
-        outsideRadius: 180, //大转盘外圆的半径
-        textRadius: 125, //大转盘奖品位置距离圆心的距离
+        width: 560,
+        outsideRadius: 280, //大转盘外圆的半径
+        textRadius: 225, //大转盘奖品位置距离圆心的距离
         insideRadius: 54, //大转盘内圆的半径
         startAngle: 0, //开始角度
         bRotate: false //false:停止;ture:旋转
@@ -21,7 +21,7 @@
       var ctx = _this.getContext('2d');
       ctx.clearRect(0, 0, opts.width, opts.width);
       ctx.strokeStyle = opts.strokeColor;
-      ctx.font = '16px Myriad Set Pro';
+      ctx.font = '22px Myriad Set Pro';
       for(var i = 0; i<_length;i++) {
         var x = opts.width/2;
         var angle = opts.startAngle + i*arc;
@@ -36,7 +36,7 @@
 
         var text = rest[i];
         var line_height = 17;
-        ctx.translate(180 + Math.cos(angle+arc/2)*opts.textRadius, 180 + Math.sin(angle+arc/2)*opts.textRadius);
+        ctx.translate(280 + Math.cos(angle+arc/2)*opts.textRadius, 280 + Math.sin(angle+arc/2)*opts.textRadius);
 
         ctx.rotate(angle+arc/2 +Math.PI/2);
         ctx.fillText(text, -ctx.measureText(text).width/2, 0);
